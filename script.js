@@ -893,3 +893,21 @@ function initCustomCursor() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  let percent = 0;
+  const percentText = document.getElementById("preloader-percent");
+  const barFill = document.getElementById("preloader-bar-fill");
+
+  const loader = setInterval(() => {
+    percent += 1;
+    percentText.textContent = percent + "%";
+    barFill.style.width = percent + "%";
+
+    if (percent >= 100) {
+      clearInterval(loader);
+      setTimeout(() => {
+        document.getElementById("preloader").classList.add("hide");
+      }, 300);
+    }
+  }, 15); // hız ayarı (15 = hızlı; 30 = yavaş)
+});
