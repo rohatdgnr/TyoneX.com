@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tyonex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@0..1&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
+    <div class="global-backdrop" aria-hidden="true">
+      <canvas id="global-canvas"></canvas>
+    </div>
+<header class="site-header" id="top">
+  <div class="container header-wrapper">
+    <a href="#" class="logo">
+      <img src="assests/tyonex_logo.png" alt="" />
+    </a>
+
+    <nav class="main-nav">
+      <a href="#hero">Anasayfa</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#services">Hizmetlerimiz</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Menüyü Aç">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-backdrop" aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-overline">Dijital Dönüşüm Ortağınız</p>
+            <h1>
+              TYONEX
+              <span class="gradient-text">Bilgi</span>
+               Teknolojileri
+            </h1>
+            <p>
+              Tyonex Bilgi Teknolojileri olarak, Uzman kadromuz ile her zaman sizin yanınızdayız.
+               BT altyapınız Gizlilik, Bütünlük ve Erişebilirlik gibi kontrol hedefleri esas alınarak mı tasarlandı?
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="https://www.whatsapp.com/">Hemen İletişime Geç</a>
+              <a class="btn ghost" href="#services">Hizmetlerimizi Gör</a>
+            </div>
+            <ul class="hero-metrics" id="hero-metrics">
+              <li>
+                <span class="metric-value" data-target="15" data-suffix="+">0</span>
+                <span class="metric-label">Yıllık Deneyim</span>
+              </li>
+              <li>
+                <span class="metric-value" data-target="120" data-suffix="+">0</span>
+                <span class="metric-label">Tamamlanan Proje</span>
+              </li>
+              <li>
+                <span class="metric-value" data-target="99" data-prefix="%" data-suffix="">0</span>
+                <span class="metric-label">Müşteri Memnuniyeti</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="glass-card">
+              <p>Bulut Çözümleri</p>
+              <div class="sparkline">
+                <span style="--v: 35"></span>
+                <span style="--v: 60"></span>
+                <span style="--v: 48"></span>
+                <span style="--v: 80"></span>
+                <span style="--v: 58"></span>
+                <span style="--v: 90"></span>
+              </div>
+              <p class="card-footnote">Yüksek kullanılabilirlik • %99.9 uptime</p>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span></span>
+        </div>
+      </section>
+
+<section class="momentum section">
+  <div class="container">
+    <div class="section-head">
+      <p class="overline">Yaklaşımımız</p>
+      <h2>Markanızı büyüten akıllı dijital çözümler üretiyoruz.</h2>
+      <p>
+        İhtiyaç analizi, tasarım, yazılım ve sürdürülebilir destek süreçlerini 
+        tek bir çatı altında topluyor, işletmenize en uygun dijital dönüşüm 
+        yolculuğunu oluşturuyoruz.
+      </p>
+    </div>
+
+    <div class="momentum-steps">
+      <article class="step-card">
+        <div class="step-index">01</div>
+        <h3>İhtiyaç Analizi</h3>
+        <p>
+          Markanızı, hedef kitlenizi ve iş modelinizi analiz ederek doğru
+          teknoloji ve stratejiyle ilerleyeceğimiz net bir yol haritası oluşturuyoruz.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-index">02</div>
+        <h3>Tasarım & Planlama</h3>
+        <p>
+          Modern, kullanıcı dostu arayüzler ve ölçeklenebilir sistem mimarileri 
+          ile projenizin sağlam temelini atıyoruz.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-index">03</div>
+        <h3>Geliştirme Süreci</h3>
+        <p>
+          Web sitesi, mobil uygulama veya özel yazılım projelerinizi 
+          en güncel teknolojilerle geliştiriyor, işlevsel ve hızlı çözümler üretiyoruz.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-index">04</div>
+        <h3>Yayın & Destek</h3>
+        <p>
+          Projenizi yayına aldıktan sonra bakım, güvenlik ve performans 
+          optimizasyonlarıyla sürekli yanında oluyoruz.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-layout">
+
+      <!-- === Row 1 === -->
+      <div class="about-row">
+        <div class="about-copy">
+          <p class="about-eyebrow">Biz Kimiz?</p>
+          <p>
+            TYONEX, bilgi teknolojileri ve dijital dönüşüm alanlarında uçtan uca çözümler
+            sunan teknoloji odaklı bir şirkettir. 15 yılı aşan sektör deneyimimizle
+            işletmelerin teknolojiyi daha verimli, güvenli ve sürdürülebilir şekilde
+            yönetmesini sağlıyoruz.
+          </p>
+          <p>
+            Logo ERP çözümleri, özel yazılım geliştirme, sunucu ve network yönetimi,
+            siber güvenlik, kurumsal altyapı hizmetleri ve iş sürekliliği alanlarında
+            yüzlerce işletmeye güçlü çözümler sağladık ve sağlamaya devam ediyoruz.
+          </p>
+          <p>
+            Teknolojiyi sizin için kolaylaştırıyor, işinizi geleceğe hazırlıyoruz.
+          </p>
+        </div>
+
+        <!-- Logo Kısmı -->
+        <div class="about-media">
+          <div class="about-logo-card">
+            <img 
+              src="assests/tyonex_logo.png" 
+              alt="Tyonex Logo"
+              class="about-logo-image"
+            />
+
+          </div>
+        </div>
+      </div>
+
+      <!-- === Row 2 === -->
+      <div class="about-row reverse">
+        <div class="about-media">
+          <img
+            src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=840&q=80"
+            alt="Modern ofis çalışma ortamı"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-copy">
+          <p class="about-eyebrow">Tecrübemiz ile yanınızdayız.</p>
+          <p>
+            Teknoloji yatırımlarınızı yönetirken zamandan kazandıran, güvenilir,
+            ölçeklenebilir ve ihtiyacınıza özel çözümler sunuyoruz. Böylece işletmenizin
+            teknolojik süreçlerini biz yönetirken siz işinize odaklanabilirsiniz.
+          </p>
+          <p>
+            TYONEX olarak, modern BT altyapılarından bulut çözümlerine kadar
+            geniş bir yelpazede kurumsal teknoloji danışmanlığı sunuyor,
+            işletmenizi geleceğe taşıyoruz.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="innovation section">
+  <div class="innovation-canvas" aria-hidden="true">
+    <canvas id="network-canvas"></canvas>
+  </div>
+
+  <div class="container">
+    <div class="innovation-content">
+      <div>
+        <p class="overline">Sınırları Aşan Çözümler</p>
+        <h2>Altyapı, yazılım ve bulut teknolojilerinde güvenilir mimariler.</h2>
+      </div>
+
+      <p>
+        Kurumsal işletmeler için ölçeklenebilir BT altyapıları, özel yazılım çözümleri, 
+        bulut geçişi ve güvenlik odaklı mimariler tasarlıyoruz. Tüm süreçlerinizi 
+        verimli, güvenli ve sürdürülebilir hale getirerek operasyonel gücünüzü artırıyoruz.
+      </p>
+
+      <ul class="innovation-highlights">
+        <li>Sunucu & ağ altyapısı tasarımı ve yönetimi</li>
+        <li>Bulut tabanlı geçiş ve hibrit yapı çözümleri</li>
+        <li>Kurumsal yazılım geliştirme & entegrasyonlar</li>
+        <li>Güvenlik, izleme ve iş sürekliliği çözümleri</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <p class="overline">Hizmetlerimiz</p>
+            <h2>İşletmenize değer katan çözümler.</h2>
+          </div>
+          <div class="service-list">
+            <article class="service-card" data-service="firewall" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">local_fire_department</span>
+              </div>
+              <h3>Firewall (Güvenlik Duvarı)</h3>
+              <p>
+                Yazılımsal ve donanımsal firewall çözümleriyle şirket ağınızı iç
+                ve dış tehditlere karşı uçtan uca koruyoruz.
+              </p>
+              <p>
+                URL filtreleme, detaylı loglama ve erişim kısıtlamalarıyla hem
+                verimliliği artırıyor hem de mevzuat yükümlülüklerinizi
+                sağlamanıza yardımcı oluyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="systems" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">devices</span>
+              </div>
+              <h3>Sistem Kurulum & Destek</h3>
+              <p>
+                Windows, Linux ve macOS tabanlı altyapılarınızı kuruyor, BT
+                operasyonlarınızı 7/24 izleyip stabil tutulmasını sağlıyoruz.
+              </p>
+              <p>
+                Yedekleme, iş sürekliliği ve düzenli bakım hizmetleriyle riskleri
+                azaltıyor, maliyetlerinizi kontrol altında tutuyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="mssql" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">database</span>
+              </div>
+              <h3>MSSQL Çözümleri</h3>
+              <p>
+                Microsoft SQL Server ortamlarınızda kurulum, bakım, tuning ve
+                replikasyon hizmetleri sunuyoruz.
+              </p>
+              <p>
+                Veri tabanı mimarinizi optimize ederek performansı artırıyor, iş
+                uygulamalarınızın kesintisiz çalışmasını güvence altına alıyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="logo" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">inventory_2</span>
+              </div>
+              <h3>Logo Çözümlerimiz</h3>
+              <p>
+                Logo ERP ürünlerinin lisanslama, kurulum, eğitim ve destek
+                süreçlerini uçtan uca yönetiyoruz.
+              </p>
+              <p>
+                Modül uyarlamaları, özel raporlar ve entegrasyonlarla Logo’yu
+                işinize tam uyumlu hale getiriyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="logo-flow" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">autorenew</span>
+              </div>
+              <h3>Logo Flow</h3>
+              <p>
+                Logo Flow iş akışı çözümleriyle süreçlerinizi kağıttan dijitale
+                taşıyor, standartlaştırıyor ve izlenebilir kılıyoruz.
+              </p>
+              <p>
+                Onay mekanizmalarından zaman planlamasına kadar tüm adımları
+                otomatikleştirerek hız ve tasarruf sağlıyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="eflow" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">hub</span>
+              </div>
+              <h3>E-Flow</h3>
+              <p>
+                E-Flow BPM platformuyla iş akışı ve süreç yönetimi ihtiyaçlarınızı
+                merkeze alarak dijitalleştiriyoruz.
+              </p>
+              <p>
+                Analitik raporlama, zaman-maliyet takibi ve otomasyon özellikleri
+                ile operasyon verimliliğini artırıyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="custom-software" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">code_blocks</span>
+              </div>
+              <h3>Özel Yazılım Çözümleri</h3>
+              <p>
+                Gereksinimlerinize özel web, masaüstü ve mobil uygulamalar
+                geliştiriyor, mevcut sistemlerinizle entegre ediyoruz.
+              </p>
+              <p>
+                C#, Java, Python ve modern JS çatılarıyla ölçeklenebilir, güvenli
+                ve yüksek performanslı projeler üretiyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="ip-pbx" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">call</span>
+              </div>
+              <h3>IP Santral Çözümleri</h3>
+              <p>
+                Grandstream başta olmak üzere IP PBX sistemlerinin kurulum,
+                konfigürasyon ve bakımını gerçekleştiriyoruz.
+              </p>
+              <p>
+                Çoklu hat yönetimi, IVR, ses kayıt ve entegrasyon özellikleriyle
+                iletişim altyapınızı modernleştiriyoruz.
+              </p>
+            </article>
+            <article class="service-card" data-service="other" role="button" tabindex="0">
+              <div class="icon">
+                <span class="material-symbol">support_agent</span>
+              </div>
+              <h3>Diğer Hizmetlerimiz</h3>
+              <p>
+                Kamera & alarm sistemleri, e-santral, bulut ekran çözümleri ve BT
+                bakım hizmetleriyle uçtan uca destek sağlıyoruz.
+              </p>
+              <p>
+                Tüm projelerde uygun maliyet, hızlı kurulum ve sürdürülebilir
+                destek yaklaşımını benimsiyoruz.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<section class="tech section" id="technology">
+  <div class="container">
+    <div class="section-head">
+      <p class="overline">Teknoloji Ekosistemimiz</p>
+      <h2>Güçlü ve güvenilir altyapılar için doğru teknolojileri kullanıyoruz.</h2>
+    </div>
+
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <span>Logo ERP</span>
+        <small>Entegrasyon & iş süreçleri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Java / Spring Boot</span>
+        <small>Kurumsal backend geliştirme</small>
+      </div>
+
+      <div class="tech-card">
+        <span>.NET Core</span>
+        <small>Kurumsal uygulamalar</small>
+      </div>
+
+      <div class="tech-card">
+        <span>React / Next.js</span>
+        <small>Web arayüzleri & portal çözümleri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Node.js</span>
+        <small>API & servis geliştirme</small>
+      </div>
+
+      <div class="tech-card">
+        <span>PostgreSQL / MSSQL</span>
+        <small>Veri yönetimi & performans</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Windows Server</span>
+        <small>Sunucu & domain hizmetleri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>VMware / Hyper-V</span>
+        <small>Sanallaştırma mimarileri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Azure / AWS</span>
+        <small>Bulut & yedekleme çözümleri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Fortigate / Sophos</span>
+        <small>Güvenlik & firewall çözümleri</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Docker</span>
+        <small>Konteyner tabanlı servisler</small>
+      </div>
+
+      <div class="tech-card">
+        <span>Power BI</span>
+        <small>Raporlama & veri analitiği</small>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="culture section">
+  <div class="container">
+    <div class="culture-grid">
+
+      <div class="culture-card">
+        <h3>Güvenilir iş ortaklığı</h3>
+        <p>
+          Tüm süreçlerde şeffaf iletişim, düzenli bilgilendirme ve ihtiyaçlarınıza 
+          özel çözümlerle uzun vadeli bir iş ortaklığı sunuyoruz.
+        </p>
+      </div>
+
+      <div class="culture-card">
+        <h3>Sürekli destek & bakım</h3>
+        <p>
+          Sistemlerinizin kesintisiz çalışması için düzenli bakım, izleme, güvenlik 
+          kontrolü ve performans iyileştirmeleriyle her zaman yanınızdayız.
+        </p>
+      </div>
+
+      <div class="culture-card">
+        <h3>Uzman ve deneyimli ekip</h3>
+        <p>
+          ERP danışmanları, yazılım geliştiriciler, sistem yöneticileri ve 
+          güvenlik uzmanlarından oluşan ekibimiz, projelerinizi profesyonel bir 
+          şekilde yönetir ve sonuç odaklı çözümler üretir.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lab section" id="lab">
+  <div class="lab-backdrop" aria-hidden="true">
+    <canvas id="lab-canvas"></canvas>
+  </div>
+
+  <div class="container">
+    <div class="lab-content">
+      <p class="overline">Tyonex Lab</p>
+      <h2>AR-GE, test ve prototipleme süreçleri tek merkezde.</h2>
+
+      <p>
+        Tyonex Lab’de yeni teknolojileri deneyimliyor, yazılım çözümlerini 
+        prototipliyor ve altyapı mimarilerini gerçek senaryolar üzerinden test ediyoruz.
+        Entegrasyon risklerini azaltmak ve müşterilerimize en güvenilir sistemi
+        sunmak için tüm süreçleri kontrollü bir ortamda doğruluyoruz.
+      </p>
+
+      <div class="lab-highlights">
+        <div class="lab-tag">Prototip Yazılım Geliştirme</div>
+        <div class="lab-tag">Entegrasyon Testleri</div>
+        <div class="lab-tag">Altyapı & Güvenlik Denemeleri</div>
+        <div class="lab-tag">Otomasyon & Performans Analizi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta section">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Birlikte güçlü teknolojik çözümler üretelim.</h2>
+      <p>
+        Tyonex Bilgi Teknolojileri olarak yazılım geliştirme, altyapı yönetimi, ERP çözümleri 
+        ve bulut teknolojileri alanında projelerinizi uçtan uca hayata geçirmek için
+        yanınızdayız. İşletmenize özel çözümler üretelim.
+      </p>
+      <a class="btn primary" href="#contact">Hemen İletişime Geç</a>
+    </div>
+  </div>
+</section>
+
+
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <p class="overline">İletişim</p>
+            <h2>Birlikte neler yapabileceğimizi konuşalım.</h2>
+            <p>
+              Aşağıdaki formu doldurun, en kısa sürede sizinle iletişime geçelim.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="info-card">
+                <h3>Merkez</h3>
+                <p>Fatih Mah. Yakacık Cad. No:165/3 Sancaktepe/İstanbul</p>
+              </div>
+              <div class="info-card">
+                <h3>E-posta</h3>
+                <a href="mailto:info@tyonex.com.tr">info@tyonex.com.tr</a>
+              </div>
+              <div class="info-card">
+                <h3>Telefon</h3>
+                <a href="tel:+902122223344">0216 232 26 98</a>
+              </div>
+            </div>
+            <form class="contact-form">
+              <label>
+                Ad Soyad
+                <input type="text" name="name" placeholder="Adınız ve soyadınız" />
+              </label>
+              <label>
+                E-posta
+                <input type="email" name="email" placeholder="ornek@tyonex.com.tr" />
+              </label>
+              <label>
+                Şirket/Marka
+                <input type="text" name="company" placeholder="Şirket adınız" />
+              </label>
+              <label>
+                Mesajınız
+                <textarea name="message" rows="4" placeholder="Projenizi kısaca anlatın"></textarea>
+              </label>
+              <button type="submit" class="btn primary">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <!-- Logo & short intro -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="assests/tyonex_logo.png" alt="">
+      </div>
+      <p>
+        Tyonex Yazılım; ERP çözümleri, özel yazılım geliştirme, sistem 
+        yönetimi, bulut teknolojileri ve kurumsal BT hizmetlerinde uzman bir teknoloji partneridir.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h4>Hizmetler</h4>
+      <ul>
+        <li><a href="#services">Logo ERP Çözümleri</a></li>
+        <li><a href="#services">Özel Yazılım Geliştirme</a></li>
+        <li><a href="#services">Sunucu & Network Yönetimi</a></li>
+        <li><a href="#services">Bulut & Yedekleme Çözümleri</a></li>
+        <li><a href="#services">Siber Güvenlik Hizmetleri</a></li>
+      </ul>
+    </div>
+
+
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h4>Sosyal Medya</h4>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Tyonex Yazılım. Tüm hakları saklıdır.</p>
+
+    <div class="policy-links">
+      <a href="#">Gizlilik Politikası</a>
+      <a href="#">KVKK</a>
+      <a href="#">Çerez Politikası</a>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="back-to-top">
+      <a href="/" aria-label="Başa dön">
+        <span class="arrow-up"></span>
+      </a>
+    </div>
+
+    <div class="service-modal" id="service-modal" aria-hidden="true">
+      <div class="service-modal__backdrop" data-modal-close></div>
+      <div
+        class="service-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="service-modal-title"
+      >
+        <button
+          class="service-modal__close"
+          type="button"
+          aria-label="Hizmet detayını kapat"
+          data-modal-close
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <h3 class="service-modal__title" id="service-modal-title"></h3>
+        <div class="service-modal__body" id="service-modal-body"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js" integrity="sha512-JR4z7kzHF0gTaFju0fU9b2qG5aXg/z+XfSKyDe9mVxCgIFxuL7Xn50E12E1dWEmp6k9R/+qvOB0fOkH1ZZ1reg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
