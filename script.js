@@ -909,4 +909,255 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     }
   }, 15); // hız ayarı (15 = hızlı; 30 = yavaş)
+
+  initAIChat();
+  initNEXAPopups();
 });
+
+// AI Chat Widget Functionality
+function initAIChat() {
+  const chatButton = document.getElementById("ai-chat-button");
+  const chatWindow = document.getElementById("ai-chat-window");
+  const chatClose = document.getElementById("ai-chat-close");
+  const chatInput = document.getElementById("ai-chat-input");
+  const chatSend = document.getElementById("ai-chat-send");
+  const chatMessages = document.getElementById("ai-chat-messages");
+  const quickActions = document.querySelectorAll(".ai-quick-action");
+
+  if (!chatButton || !chatWindow) return;
+
+  // AI Response Generator (Basit kural tabanlı sistem)
+  function getAIResponse(userMessage) {
+    const message = userMessage.toLowerCase().trim();
+    
+    // Hizmetler hakkında
+    if (message.includes("hizmet") || message.includes("ne yapıyorsunuz") || message.includes("hizmetleriniz")) {
+      return "Tyonex Bilgi Teknolojileri olarak şu hizmetleri sunuyoruz:\n\n• Firewall (Güvenlik Duvarı) çözümleri\n• Sistem Kurulum & Destek\n• MSSQL Çözümleri\n• Logo ERP Çözümleri\n• Logo Flow & E-Flow\n• Özel Yazılım Geliştirme\n• IP Santral Çözümleri\n• Bulut & Yedekleme\n\nDetaylı bilgi için hizmetlerimiz bölümüne bakabilirsiniz.";
+    }
+    
+    // Fiyat hakkında
+    if (message.includes("fiyat") || message.includes("ücret") || message.includes("maliyet") || message.includes("ne kadar")) {
+      return "Hizmetlerimizin fiyatlandırması projenizin kapsamına ve ihtiyaçlarınıza göre değişiklik göstermektedir. Size özel bir teklif hazırlamak için lütfen bizimle iletişime geçin. Telefon: 0216 232 26 98 veya e-posta: info@tyonex.com.tr";
+    }
+    
+    // İletişim
+    if (message.includes("iletişim") || message.includes("telefon") || message.includes("adres") || message.includes("ulaş")) {
+      return "Bizimle iletişime geçmek için:\n\n📍 Adres: Fatih Mah. Yakacık Cad. No:165/3 Sancaktepe/İstanbul\n📞 Telefon: 0216 232 26 98\n📧 E-posta: info@tyonex.com.tr\n\nAyrıca WhatsApp üzerinden de bize ulaşabilirsiniz!";
+    }
+    
+    // Logo hakkında
+    if (message.includes("logo") || message.includes("erp")) {
+      return "Logo ERP çözümlerinde uzmanız. Logo yazılımlarının kurulumu, eğitimi, desteği ve özel uyarlamalarını yapıyoruz. Logo Flow ve E-Flow iş akışı çözümlerini de sunuyoruz. Detaylı bilgi için hizmetlerimiz bölümüne bakabilirsiniz.";
+    }
+    
+    // Yazılım hakkında
+    if (message.includes("yazılım") || message.includes("geliştirme") || message.includes("uygulama")) {
+      return "Özel yazılım geliştirme hizmetimizle ihtiyaçlarınıza özel web, masaüstü ve mobil uygulamalar geliştiriyoruz. C#, Java, Python ve modern JavaScript teknolojileri kullanıyoruz. Projeniz için detaylı bilgi almak ister misiniz?";
+    }
+    
+    // Güvenlik hakkında
+    if (message.includes("güvenlik") || message.includes("firewall") || message.includes("siber")) {
+      return "Siber güvenlik alanında firewall çözümleri, ağ güvenliği ve güvenlik danışmanlığı hizmetleri sunuyoruz. Şirketinizi iç ve dış tehditlere karşı koruyoruz. Detaylı bilgi için iletişime geçebilirsiniz.";
+    }
+    
+    // Genel sorular
+    if (message.includes("merhaba") || message.includes("selam") || message.includes("hello") || message.includes("hi")) {
+      return "Merhaba! Ben NEXA, Tyonex'in AI asistanıyım. Size nasıl yardımcı olabilirim?";
+    }
+    
+    if (message.includes("teşekkür") || message.includes("sağol") || message.includes("thanks")) {
+      return "Rica ederim! Başka bir konuda yardımcı olabilir miyim?";
+    }
+    
+    if (message.includes("nexa") || message.includes("kimsin") || message.includes("sen kimsin")) {
+      return "Ben NEXA! Tyonex Bilgi Teknolojileri'nin AI asistanıyım. Size hizmetlerimiz, fiyatlandırma ve genel sorularınız hakkında yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?";
+    }
+    
+    // Varsayılan yanıt
+    return "Anladım. Size daha iyi yardımcı olabilmem için lütfen sorunuzu biraz daha detaylandırabilir misiniz? Hizmetlerimiz, fiyatlandırma veya iletişim bilgileri hakkında bilgi almak isterseniz söyleyin.";
+  }
+
+  // Mesaj ekleme fonksiyonu
+  function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `ai-message ${isUser ? "ai-message-user" : "ai-message-bot"}`;
+    
+    const avatar = document.createElement("div");
+    avatar.className = "ai-message-avatar nexa-avatar";
+    avatar.innerHTML = `<div class="nexa-avatar-inner"><span class="nexa-letter">N</span></div>`;
+    
+    const content = document.createElement("div");
+    content.className = "ai-message-content";
+    const paragraphs = text.split("\n\n");
+    paragraphs.forEach((para, index) => {
+      const p = document.createElement("p");
+      p.textContent = para;
+      if (index > 0) p.style.marginTop = "0.5rem";
+      content.appendChild(p);
+    });
+    
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(content);
+    chatMessages.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Mesaj gönderme
+  function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+    
+    // Kullanıcı mesajını ekle
+    addMessage(message, true);
+    chatInput.value = "";
+    
+    // AI yanıtını simüle et (kısa bir gecikme ile)
+    setTimeout(() => {
+      const response = getAIResponse(message);
+      addMessage(response);
+    }, 800);
+  }
+
+  // Chat aç/kapa
+  function toggleChat() {
+    const isActive = chatWindow.classList.contains("active");
+    if (isActive) {
+      chatWindow.classList.remove("active");
+      chatWindow.setAttribute("aria-hidden", "true");
+    } else {
+      chatWindow.classList.add("active");
+      chatWindow.setAttribute("aria-hidden", "false");
+      chatInput.focus();
+    }
+  }
+
+  // Event listeners
+  chatButton.addEventListener("click", toggleChat);
+  chatClose.addEventListener("click", toggleChat);
+  chatSend.addEventListener("click", sendMessage);
+  
+  chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // Quick actions
+  quickActions.forEach((action) => {
+    action.addEventListener("click", () => {
+      const actionType = action.dataset.action;
+      let message = "";
+      
+      switch(actionType) {
+        case "hizmetler":
+          message = "Hizmetleriniz nelerdir?";
+          break;
+        case "fiyat":
+          message = "Fiyatlandırma hakkında bilgi almak istiyorum";
+          break;
+        case "iletisim":
+          message = "İletişim bilgileriniz nelerdir?";
+          break;
+      }
+      
+      if (message) {
+        addMessage(message, true);
+        setTimeout(() => {
+          const response = getAIResponse(message);
+          addMessage(response);
+        }, 800);
+      }
+    });
+  });
+
+  // Dışarı tıklandığında kapat (opsiyonel)
+  chatWindow.addEventListener("click", (e) => {
+    if (e.target === chatWindow) {
+      toggleChat();
+    }
+  });
+}
+
+// NEXA Popup Functionality
+function initNEXAPopups() {
+  const heroPopup = document.getElementById("nexa-popup-hero");
+  const servicesPopup = document.getElementById("nexa-popup-services");
+  
+  if (!heroPopup || !servicesPopup) return;
+
+  // Popup kapatma fonksiyonu
+  function closePopup(popup) {
+    popup.classList.remove("show");
+  }
+
+  // Popup açma fonksiyonu
+  function showPopup(popup, delay = 0) {
+    setTimeout(() => {
+      popup.classList.add("show");
+      
+      // 8 saniye sonra otomatik kapat
+      setTimeout(() => {
+        closePopup(popup);
+      }, 8000);
+    }, delay);
+  }
+
+  // Close butonları
+  heroPopup.querySelector(".nexa-popup-close")?.addEventListener("click", () => {
+    closePopup(heroPopup);
+  });
+
+  servicesPopup.querySelector(".nexa-popup-close")?.addEventListener("click", () => {
+    closePopup(servicesPopup);
+  });
+
+  // Hero bölümü görünür olduğunda popup göster
+  const heroSection = document.querySelector(".hero");
+  if (heroSection) {
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !heroPopup.classList.contains("shown")) {
+            showPopup(heroPopup, 2000); // 2 saniye gecikme ile
+            heroPopup.classList.add("shown");
+            heroObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    heroObserver.observe(heroSection);
+  }
+
+  // Services bölümü görünür olduğunda popup göster
+  const servicesSection = document.querySelector("#services");
+  if (servicesSection) {
+    const servicesObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !servicesPopup.classList.contains("shown")) {
+            showPopup(servicesPopup, 1000); // 1 saniye gecikme ile
+            servicesPopup.classList.add("shown");
+            servicesObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    servicesObserver.observe(servicesSection);
+  }
+
+  // Popup'a tıklandığında chat'i aç
+  [heroPopup, servicesPopup].forEach((popup) => {
+    popup.addEventListener("click", (e) => {
+      if (e.target.closest(".nexa-popup-close")) return;
+      const chatButton = document.getElementById("ai-chat-button");
+      if (chatButton) {
+        chatButton.click();
+        closePopup(popup);
+      }
+    });
+  });
+}

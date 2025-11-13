@@ -98,7 +98,14 @@
             <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
             <div class="glass-card">
-              <p>Bulut Çözümleri</p>
+              <div class="glass-card-header">
+                <h3>Bulut Çözümleri</h3>
+                <div class="glass-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+                  </svg>
+                </div>
+              </div>
               <div class="sparkline">
                 <span style="--v: 35"></span>
                 <span style="--v: 60"></span>
@@ -107,7 +114,13 @@
                 <span style="--v: 58"></span>
                 <span style="--v: 90"></span>
               </div>
-              <p class="card-footnote">Yüksek kullanılabilirlik • %99.9 uptime</p>
+              <div class="glass-card-footer">
+                <p class="card-footnote">Yüksek kullanılabilirlik • %99.9 uptime</p>
+                <div class="glass-card-stats">
+                  <span class="stat-item">Azure</span>
+                  <span class="stat-item">AWS</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -591,6 +604,35 @@
       </section>
     </main>
 
+<!-- NEXA Floating Popups -->
+<div class="nexa-popup nexa-popup-hero" id="nexa-popup-hero">
+  <div class="nexa-popup-content">
+    <div class="nexa-popup-avatar">
+      <div class="nexa-avatar-inner">
+        <span class="nexa-letter">N</span>
+      </div>
+    </div>
+    <div class="nexa-popup-text">
+      <p>Merhaba! Ben <strong>NEXA</strong>. Size nasıl yardımcı olabilirim?</p>
+    </div>
+    <button class="nexa-popup-close" aria-label="Kapat">×</button>
+  </div>
+</div>
+
+<div class="nexa-popup nexa-popup-services" id="nexa-popup-services">
+  <div class="nexa-popup-content">
+    <div class="nexa-popup-avatar">
+      <div class="nexa-avatar-inner">
+        <span class="nexa-letter">N</span>
+      </div>
+    </div>
+    <div class="nexa-popup-text">
+      <p>Hizmetlerimiz hakkında sorularınız mı var? <strong>NEXA</strong> size yardımcı olabilir!</p>
+    </div>
+    <button class="nexa-popup-close" aria-label="Kapat">×</button>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -644,27 +686,89 @@
 </footer>
 
 
-<div class="floating-buttons">
+<!-- AI Canlı Destek Widget -->
+<div class="ai-chat-widget" id="ai-chat-widget">
+  <div class="ai-chat-button" id="ai-chat-button" aria-label="NEXA ile konuş">
+    <div class="nexa-avatar-button">
+      <div class="nexa-avatar-inner">
+        <span class="nexa-letter">N</span>
+      </div>
+    </div>
+    <span class="ai-chat-badge"></span>
+  </div>
   
-  <!-- Başa dön -->
-<div class="ty-floating-box">
-
-  <!-- Başa Dön -->
-  <div class="ty-top-btn">
-    <a href="/" aria-label="Başa dön">
-      <span class="ty-icon ty-arrow-up"></span>
-    </a>
+  <div class="ai-chat-window" id="ai-chat-window" aria-hidden="true">
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-content">
+        <div class="ai-chat-avatar nexa-avatar">
+          <div class="nexa-avatar-inner">
+            <span class="nexa-letter">N</span>
+          </div>
+        </div>
+        <div class="ai-chat-header-text">
+          <h3>NEXA</h3>
+          <p>AI Asistanınız yanınızda</p>
+        </div>
+      </div>
+      <button class="ai-chat-close" id="ai-chat-close" aria-label="Chat'i kapat">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="ai-chat-messages" id="ai-chat-messages">
+      <div class="ai-message ai-message-bot">
+        <div class="ai-message-avatar nexa-avatar">
+          <div class="nexa-avatar-inner">
+            <span class="nexa-letter">N</span>
+          </div>
+        </div>
+        <div class="ai-message-content">
+          <p>Merhaba! Ben <strong>NEXA</strong>, Tyonex'in AI asistanıyım. Size nasıl yardımcı olabilirim? Hizmetlerimiz, fiyatlandırma veya genel sorularınız için buradayım.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ai-chat-quick-actions" id="ai-chat-quick-actions">
+      <button class="ai-quick-action" data-action="hizmetler">Hizmetlerimiz</button>
+      <button class="ai-quick-action" data-action="fiyat">Fiyatlandırma</button>
+      <button class="ai-quick-action" data-action="iletisim">İletişim</button>
+    </div>
+    
+    <div class="ai-chat-input-container">
+      <input 
+        type="text" 
+        class="ai-chat-input" 
+        id="ai-chat-input" 
+        placeholder="Mesajınızı yazın..."
+        aria-label="Mesaj girişi"
+      />
+      <button class="ai-chat-send" id="ai-chat-send" aria-label="Gönder">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
   </div>
-
-  <!-- WhatsApp -->
-  <div class="ty-wa-btn">
-    <a href="https://wa.me/+905364125206" target="_blank" aria-label="WhatsApp">
-      <span class="ty-icon ty-wa-icon"></span>
-    </a>
-  </div>
-
 </div>
 
+<div class="floating-buttons">
+  <div class="ty-floating-box">
+    <!-- Başa Dön -->
+    <div class="ty-top-btn">
+      <a href="#top" aria-label="Başa dön">
+        <span class="ty-icon ty-arrow-up"></span>
+      </a>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="ty-wa-btn">
+      <a href="https://wa.me/+905364125206" target="_blank" aria-label="WhatsApp">
+        <span class="ty-icon ty-wa-icon"></span>
+      </a>
+    </div>
+  </div>
 </div>
 
 
