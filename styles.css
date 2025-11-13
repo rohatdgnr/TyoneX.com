@@ -1738,3 +1738,69 @@ ul {
   opacity: 0;
   visibility: hidden;
 }
+
+
+
+/* Ana kapsayıcı */
+.ty-floating-box {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 99999;
+}
+
+/* Başa dön butonu */
+.ty-top-btn a {
+  width: 48px;
+  height: 48px;
+  background: #ba0b0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* WhatsApp butonu */
+.ty-wa-btn a {
+  width: 48px;
+  height: 48px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.ty-wa-btn a:hover {
+  transform: scale(1.1);
+}
+
+/* Icon default stil */
+.ty-icon {
+  display: block;
+}
+
+/* Yukarı ok */
+.ty-arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid white;
+}
+
+/* WhatsApp ikonu (SVG background) */
+.ty-wa-icon {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 32 32'%3E%3Cpath d='M16.004 3.2c-7.047 0-12.8 5.656-12.8 12.641 0 2.227.582 4.387 1.688 6.293l-1.75 6.4 6.594-1.734c1.852.988 3.93 1.507 6.031 1.507h.004c7.047 0 12.8-5.657 12.8-12.641 0-3.367-1.313-6.535-3.7-8.922-2.387-2.383-5.555-3.844-8.867-3.844zM16 26.875h-.004c-1.82 0-3.606-.48-5.164-1.383l-.371-.219-3.914 1.031 1.047-3.836-.243-.398c-1.012-1.664-1.547-3.586-1.547-5.57 0-5.82 4.754-10.555 10.594-10.555 2.828 0 5.488 1.102 7.488 3.102 2 2 3.102 4.656 3.102 7.484 0 5.82-4.75 10.554-10.59 10.554zM22.625 19.43c-.309-.156-1.82-.898-2.105-1-.281-.102-.485-.156-.688.156-.203.305-.79 1-.97 1.203-.18.207-.359.234-.668.078-.309-.157-1.305-.48-2.484-1.531-.92-.824-1.547-1.84-1.73-2.148-.18-.305-.02-.469.137-.625.141-.141.312-.367.469-.551.156-.184.207-.309.312-.516.102-.207.051-.387-.027-.543-.078-.156-.688-1.66-.938-2.27-.25-.602-.504-.52-.688-.52-.18 0-.383-.023-.586-.023-.207 0-.543.078-.828.387-.285.305-1.082 1.055-1.082 2.57 0 1.516 1.11 2.977 1.266 3.184.156.207 2.18 3.32 5.297 4.523.742.32 1.32.512 1.77.656.742.234 1.414.203 1.945.125.594-.086 1.82-.742 2.078-1.457.258-.715.258-1.328.18-1.457-.078-.13-.285-.207-.594-.36z'/%3E%3C/svg%3E");
+}
+
