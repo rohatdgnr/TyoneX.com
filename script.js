@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document
     .querySelectorAll(
-      ".section, .service-card, .about-copy, .about-media, .step-card, .tech-card, .culture-card, .innovation-content, .lab-content, .cta-inner, .info-card, .contact-form"
+      ".section, .service-card, .about-copy, .about-media, .step-card, .tech-card, .culture-card, .innovation-content, .lab-content, .cta-inner, .info-card, .contact-map"
     )
     .forEach((el) => {
       observer.observe(el);
@@ -865,7 +865,6 @@ function initCustomCursor() {
     ".step-card",
     ".culture-card",
     ".hero-metrics li",
-    ".contact-form button",
     ".lab-tag",
     ".service-modal__close",
   ];
